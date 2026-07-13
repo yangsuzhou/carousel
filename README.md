@@ -2,6 +2,12 @@
 
 一个轻量、高性能的 Vue 3 轮播组件，支持触摸拖拽、无限循环、RTL 布局。
 
+## 📖 文档
+
+查看完整的 API 文档和示例：
+
+[在线文档](https://yangsuzhou.github.io/carousel/)
+
 ## ✨ 特性
 
 - 🚀 **高性能** - 基于 CSS3 动画，流畅无卡顿
@@ -39,7 +45,7 @@ import { Slider } from "@punish/carousel";
 
 ### 基础用法
 
-```vue
+````vue
 <script setup lang="ts">
 import { ref } from "vue";
 import { Slider } from "@punish/carousel";
@@ -57,16 +63,10 @@ const items = ref([
             <div :style="{ backgroundColor: item.color }">
                 {{ item.title }}
             </div>
-        </template>
-    </Slider>
+        </template> </Slider
+    >```
 </template>
-```
-
-## 📖 文档
-
-查看完整的 API 文档和示例：
-
-[在线文档](https://yangsuzhou.github.io/carousel/)
+````
 
 ## 🎯 Props
 
