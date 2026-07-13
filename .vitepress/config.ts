@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 import { fileURLToPath, URL } from "node:url";
 
-const base = process.env.VITEPRESS_BASE || "/";
+const base = process.env.VITEPRESS_BASE || "/carousel/";
 
 export default defineConfig({
     title: "Carousel 轮播组件",

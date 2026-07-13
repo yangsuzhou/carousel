@@ -66,7 +66,7 @@ const items = ref([
 
 查看完整的 API 文档和示例：
 
-[在线文档](https://your-username.github.io/carousel-docs/)
+[在线文档](https://yangsuzhou.github.io/carousel/)
 
 ## 🎯 Props
 
