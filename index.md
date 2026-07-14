@@ -21,6 +21,9 @@ features:
     - icon: ♾️
       title: 无限循环
       details: 无缝循环滚动，平滑过渡
+    - icon: ▶️
+      title: 自动轮播
+      details: 后台不空转、切回不跳帧
     - icon: 🔄
       title: RTL 布局
       details: 支持从右到左的布局方向

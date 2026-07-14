@@ -7,6 +7,7 @@ import CarouselDemo from './carousel.demo.vue'
 import CarouselDemoSingle from './carousel-demo-single.vue'
 import CarouselDemoControls from './carousel-demo-controls.vue'
 import CarouselDemoRtl from './carousel-demo-rtl.vue'
+import CarouselDemoAutoplay from './carousel-demo-autoplay.vue'
 </script>
 
 # Carousel 轮播组件
@@ -100,6 +101,82 @@ function onChange(index: number) {
 
 :::
 
+## 自动轮播
+
+通过 `autoplay` 开启自动播放，并用 `delay` 控制切换间隔（单位 ms）。
+
+### 在线演示
+
+<br />
+
+<CarouselDemoAutoplay />
+
+### 示例代码
+
+:::: details 点击展开代码
+
+```vue
+<script setup lang="ts">
+import { ref } from "vue";
+import { Slider } from "@punish/carousel";
+
+const items = ref([
+    { title: "山川壮丽", desc: "感受大自然的鬼斧神工", color: "#2d3436" },
+    { title: "海洋秘境", desc: "探索深蓝世界的奥秘", color: "#0984e3" },
+    { title: "城市光影", desc: "夜幕下的繁华都市", color: "#6c5ce7" },
+    { title: "森林物语", desc: "聆听自然的低语", color: "#00b894" },
+    { title: "沙漠星辰", desc: "仰望浩瀚的星空", color: "#e17055" },
+]);
+
+const autoplay = ref(true);
+const delay = ref(2500);
+const currentIndex = ref(0);
+
+function onChange(index: number) {
+    currentIndex.value = index;
+}
+</script>
+
+<template>
+    <Slider
+        :items="items"
+        :gap="0"
+        :duration="500"
+        :displayCount="1"
+        paginationVisible
+        :autoplay="autoplay"
+        :delay="delay"
+        @change="onChange"
+    >
+        <template #default="{ item, active }">
+            <div
+                :class="{ active }"
+                :style="{ backgroundColor: item.color }"
+                style="
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 8px;
+                    color: #fff;
+                "
+            >
+                <div style="text-align: center;">
+                    <h3 style="margin: 0 0 8px; font-size: 28px;">{{ item.title }}</h3>
+                    <p style="margin: 0; opacity: 0.85;">{{ item.desc }}</p>
+                </div>
+            </div>
+        </template>
+    </Slider>
+
+    <!-- 可交互地开关自动播放、调整间隔 -->
+    <label><input type="checkbox" v-model="autoplay" /> 自动播放</label>
+    <label>间隔：{{ delay }} ms <input type="range" min="1000" max="5000" step="500" v-model.number="delay" /></label>
+</template>
+```
+
+::::
+
 ## 多卡片并排展示
 
 同时展示多个卡片，适合横向列表展示场景。
@@ -129,15 +206,7 @@ function onChange(index: number) {
 </script>
 
 <template>
-    <Slider
-        :items="items"
-        :gap="16"
-        :duration="400"
-        :displayCount="3"
-        :exposureWidth="30"
-        paginationVisible
-        @change="onChange"
-    >
+    <Slider :items="items" :gap="16" :duration="400" :displayCount="3" :exposureWidth="30" paginationVisible @change="onChange">
         <template #default="{ item, active }">
             <div
                 :class="{ active }"
@@ -252,9 +321,7 @@ function goTo(index: number) {
         >
             ◀ 上一项
         </button>
-        <span style="font-size: 14px; color: #666; min-width: 60px; text-align: center;"
-            >{{ currentIndex + 1 }} / {{ items.length }}</span
-        >
+        <span style="font-size: 14px; color: #666; min-width: 60px; text-align: center;">{{ currentIndex + 1 }} / {{ items.length }}</span>
         <button
             style="padding: 8px 20px; border: 1px solid #d0d5dd; border-radius: 6px; background: #fff; color: #333; font-size: 14px; cursor: pointer;"
             @click="goNext"
@@ -263,9 +330,7 @@ function goTo(index: number) {
         </button>
     </div>
 
-    <div
-        style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 14px; color: #666;"
-    >
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 14px; color: #666;">
         <span>跳转到：</span>
         <button
             v-for="(_, i) in items"
@@ -357,10 +422,7 @@ function onChange(index: number) {
 <template>
     <Slider :items="items" :displayCount="3" :exposureWidth="40" :gap="16" :duration="400">
         <template #default="{ item, active }">
-            <div
-                :class="{ active }"
-                style="height: 150px; border-radius: 12px; background: #a29bfe; transition: all 0.3s;"
-            >
+            <div :class="{ active }" style="height: 150px; border-radius: 12px; background: #a29bfe; transition: all 0.3s;">
                 <!-- 自定义内容 -->
             </div>
         </template>
@@ -373,6 +435,8 @@ function onChange(index: number) {
 | 参数                        | 类型                       | 默认值      | 说明                       |
 | --------------------------- | -------------------------- | ----------- | -------------------------- |
 | `items`                     | `Array`                    | `[]`        | 数据数组                   |
+| `autoplay`                  | `boolean`                  | `false`     | 是否自动轮播               |
+| `delay`                     | `number`                   | `3000`      | 自动轮播间隔 (ms)          |
 | `initialIndex`              | `number`                   | `0`         | 初始激活索引               |
 | `threshold`                 | `number`                   | `20`        | 拖拽切换阈值 (px)          |
 | `gap`                       | `number`                   | `0`         | 列表项间距 (px)            |
