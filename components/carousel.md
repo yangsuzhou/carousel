@@ -432,25 +432,26 @@ function onChange(index: number) {
 
 ## Props
 
-| 参数                        | 类型                       | 默认值      | 说明                       |
-| --------------------------- | -------------------------- | ----------- | -------------------------- |
-| `items`                     | `Array`                    | `[]`        | 数据数组                   |
-| `autoplay`                  | `boolean`                  | `false`     | 是否自动轮播               |
-| `delay`                     | `number`                   | `3000`      | 自动轮播间隔 (ms)          |
-| `initialIndex`              | `number`                   | `0`         | 初始激活索引               |
-| `threshold`                 | `number`                   | `20`        | 拖拽切换阈值 (px)          |
-| `gap`                       | `number`                   | `0`         | 列表项间距 (px)            |
-| `duration`                  | `number`                   | `300`       | 动画过渡时长 (ms)          |
-| `displayCount`              | `number`                   | `1`         | 同时显示的卡片数量         |
-| `exposureWidth`             | `number`                   | `0`         | 相邻项的露出宽度 (px)      |
-| `dir`                       | `"ltr" \| "rtl" \| "auto"` | `undefined` | 布局方向                   |
-| `itemClass`                 | `string`                   | `""`        | 列表项自定义 class         |
-| `activeItemClass`           | `string`                   | `""`        | 激活项自定义 class         |
-| `paginationVisible`         | `boolean`                  | `true`      | 是否显示分页器             |
-| `paginationClass`           | `string`                   | `""`        | 分页器容器自定义 class     |
-| `paginationItemClass`       | `string`                   | `""`        | 分页器项自定义 class       |
-| `activePaginationItemClass` | `string`                   | `""`        | 激活的分页器项自定义 class |
-| `paginationGap`             | `number`                   | `24`        | 分页器圆点间距 (px)        |
+| 参数                             | 类型                       | 默认值      | 说明                       |
+| -------------------------------- | -------------------------- | ----------- | -------------------------- |
+| `items`                          | `Array`                    | `[]`        | 数据数组                   |
+| `autoplay`                       | `boolean`                  | `false`     | 是否自动轮播               |
+| `delay`                          | `number`                   | `3000`      | 自动轮播间隔 (ms)          |
+| `initialIndex`                   | `number`                   | `0`         | 初始激活索引               |
+| `threshold`                      | `number`                   | `20`        | 拖拽切换阈值 (px)          |
+| `gap`                            | `number`                   | `0`         | 列表项间距 (px)            |
+| `duration`                       | `number`                   | `300`       | 动画过渡时长 (ms)          |
+| `displayCount`                   | `number`                   | `1`         | 同时显示的卡片数量         |
+| `exposureWidth`                  | `number`                   | `0`         | 相邻项的露出宽度 (px)      |
+| `dir`                            | `"ltr" \| "rtl" \| "auto"` | `undefined` | 布局方向                   |
+| `itemClass`                      | `string`                   | `""`        | 列表项自定义 class         |
+| `activeItemClass`                | `string`                   | `""`        | 激活项自定义 class         |
+| `paginationVisible`              | `boolean`                  | `true`      | 是否显示分页器             |
+| `paginationClass`                | `string`                   | `""`        | 分页器容器自定义 class     |
+| `paginationItemClass`            | `string`                   | `""`        | 分页器项自定义 class       |
+| `activePaginationItemClass`      | `string`                   | `""`        | 激活的分页器项自定义 class |
+| `paginationGap`                  | `number`                   | `24`        | 分页器圆点间距 (px)        |
+| `paginationVisibleWhenSingleOne` | `boolean`                  | `false`     | 当只有一项时是否显示分页器 |
 
 ## Events
 
