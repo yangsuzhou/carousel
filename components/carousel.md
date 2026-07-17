@@ -437,7 +437,7 @@ function onChange(index: number) {
 | `items`                          | `Array`                    | `[]`        | 数据数组                   |
 | `autoplay`                       | `boolean`                  | `false`     | 是否自动轮播               |
 | `delay`                          | `number`                   | `3000`      | 自动轮播间隔 (ms)          |
-| `initialIndex`                   | `number`                   | `0`         | 初始激活索引               |
+| `initialIndex`                   | `number`                   | `0`         | 当前激活项索引             |
 | `threshold`                      | `number`                   | `20`        | 拖拽切换阈值 (px)          |
 | `gap`                            | `number`                   | `0`         | 列表项间距 (px)            |
 | `duration`                       | `number`                   | `300`       | 动画过渡时长 (ms)          |
