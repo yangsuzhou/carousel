@@ -76,7 +76,7 @@ function onChange(index: number) {
 
 <template>
     <Slider :items="items" :gap="0" :duration="500" :displayCount="1" paginationVisible @change="onChange">
-        <template #default="{ item, active }">
+        <template #default="{ item, active, index }">
             <div
                 :class="{ active }"
                 :style="{ backgroundColor: item.color }"
@@ -148,7 +148,7 @@ function onChange(index: number) {
         :delay="delay"
         @change="onChange"
     >
-        <template #default="{ item, active }">
+        <template #default="{ item, active, index }">
             <div
                 :class="{ active }"
                 :style="{ backgroundColor: item.color }"
@@ -207,7 +207,7 @@ function onChange(index: number) {
 
 <template>
     <Slider :items="items" :gap="16" :duration="400" :displayCount="3" :exposureWidth="30" paginationVisible @change="onChange">
-        <template #default="{ item, active }">
+        <template #default="{ item, active, index }">
             <div
                 :class="{ active }"
                 :style="{
