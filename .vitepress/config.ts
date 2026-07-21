@@ -13,6 +13,7 @@ export default defineConfig({
         nav: [{ text: "首页", link: "/" }],
         socialLinks: [
             // { icon: "github", link: "https://github.com/your-repo/carousel-docs" }
+            { icon: "npm", link: "https://www.npmjs.com/package/@punish/carousel" },
         ],
         footer: {
             message: "基于 MIT 协议开源",
